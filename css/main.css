@@ -117,9 +117,9 @@ textarea {
    }
 
    .product .row {
-     margin: 0;
+     margin: 0 20px;
      display: flex;
-     justify-content: center;
+     justify-content: space-between;
    }
 
    .product .color {
@@ -132,9 +132,33 @@ textarea {
    .product .available {
      color: #00a676;
      margin: 20px 0;
+     border-bottom: 1px solid;
+     border-top: 1px solid;
+     font-size: 1.2rem;
    }
 
+   .product select {
+     color: #6c757d;
+   }
 
+   .product .row > p {
+     margin: 25px 0;
+     text-align: initial;
+     padding: 0;
+   }
+
+   .black  {
+     background-color: black;
+
+   }
+
+   .red {
+     background-color: red;
+   }
+
+   .product section p:last-child {
+     text-align: justify;
+   }
 
 
 
