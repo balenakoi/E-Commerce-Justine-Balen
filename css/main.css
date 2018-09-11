@@ -267,8 +267,8 @@ textarea {
    }
 
 
-.card-deck{
-  margin-top:38px;
+.row img{
+  margin-top:29px;
 }
 
 .card-title{
@@ -287,12 +287,12 @@ a:hover{
   color: #5687e6;
 }
 
-.prix{
+.price{
   color:#fb3640;
 }
 
 .footer {
-  margin-top: 50px;
+  margin-top: 65px;
   background: #073660;
   padding: 10px 0;
 }
