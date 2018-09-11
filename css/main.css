@@ -140,7 +140,6 @@ textarea {
      flex-direction: row;
      justify-content: flex-end;
      align-content: center;
-   /*   background-color: #023E73; */
      width: 100%;
      padding: 2rem;
 
@@ -295,6 +294,7 @@ a:hover{
   margin-top: 65px;
   background: #073660;
   padding: 10px 0;
+
 }
 .footer a {
   color: #70726F;
