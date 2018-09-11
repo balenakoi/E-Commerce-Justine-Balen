@@ -394,7 +394,25 @@ a:hover{
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
  .product .row {
-      align-items: center;
+  align-items: center;
+ }
+
+ .product .divPrice {
+   justify-content: center;
+   flex-direction: column-reverse;
+ }
+
+ .product .price {
+   text-align: center !important;
+ }
+
+ .footer {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+ }
+ .product section p:last-child {
+   margin: 0;
  }
 }
 
@@ -410,9 +428,11 @@ a:hover{
   border-right: 1px solid #70726F;
   transition: all .5s ease;
 }
+
 .footer a:first-child {
   border-left: 1px solid #70726F;
 }
+
 .footer a:hover {
   color: white;
 }

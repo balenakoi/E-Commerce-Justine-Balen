@@ -1,20 +1,22 @@
-<!doctype html>
-<html class="no-js" lang="fr">
 
-<head>
-  <?php
+<?php
+
+  //Take the number of product
   $productIndex = $_GET['index'];
 
-        $product = [
-          ['name' => 'Nike Air Span II SE Mini Swoosh - Black/Red',
-          'price' => '109,00 €',
-          'available' => 'Disponible',
-          'descript' => "Une fois de plus, la marque américaine présente une nouvelle version d’une silhouette lancée à la fin des années 80, la Nike Air Span 2. Ce modèle aux lignes rétro arbore une construction associant différents matériaux comme du mesh, de la feutrine et du cuir. Côté coloris, cette édition présente une association de noir et de détails rouges apportant du contraste à l’ensemble à l’image du mini-Swoosh. Une semelle blanc cassé finalise son design. Cette Nike Air Span II SE Mini Swoosh Black/Red fait partie de la collection automne/hiver 2018.",
-          'src' => "img/air-span.jpg",
-          'size' => [40, 42, 42.5, 43, 44, 44.5],
-          'color' => ['black', 'red']
-          ],
-            [
+  //All products in array
+  $products = [
+          [
+
+            'name' => 'Nike Air Span II SE Mini Swoosh - Black/Red',
+            'price' => '109,00 €',
+            'available' => 'Disponible',
+            'descript' => "Une fois de plus, la marque américaine présente une nouvelle version d’une silhouette lancée à la fin des années 80, la Nike Air Span 2. Ce modèle aux lignes rétro arbore une construction associant différents matériaux comme du mesh, de la feutrine et du cuir. Côté coloris, cette édition présente une association de noir et de détails rouges apportant du contraste à l’ensemble à l’image du mini-Swoosh. Une semelle blanc cassé finalise son design. Cette Nike Air Span II SE Mini Swoosh Black/Red fait partie de la collection automne/hiver 2018.",
+            'src' => "img/air-span.jpg",
+            'size' => [40, 42, 42.5, 43, 44, 44.5],
+            'color' => ['black', 'red']
+          ],[
+
             'name' => 'New Balance M1500.9 FT - Made in UK',
             'price' => '179,00 €',
             'available' => 'Disponible',
@@ -22,8 +24,8 @@
             'src' => "img/new-balance-made-in-uk.jpg",
             'size' => [40, 41.5, 42.5, 43, 44, 44.5, 45],
             'color' => ['white', 'lightblue', 'lightpink', 'black']
-            ],
-            [
+          ],[
+
             'name' => 'Asics Gel Saga - White/Asics Blue',
             'price' => '109,00 €',
             'available' => 'Disponible',
@@ -31,8 +33,8 @@
             'src' => "img/gel-saga-whiteasics-blue.jpg",
             'size' => [40, 41.5, 42.5, 43.5, 44, 44.5, 45, 46],
             'color' => ['white', 'blue', 'orange']
-          ],
-            [
+          ],[
+
             'name' => 'Reebok ACT 300 MU - Chalk/Teal Energy',
             'price' => '99,00 €',
             'available' => 'Disponible',
@@ -42,39 +44,40 @@
             'color' => ['white', 'lightgreen']
           ]
         ];
-        if (! isset($productIndex) OR $productIndex >= count($product) OR $productIndex < 0) {
-          header('Location: 404.html');
-          exit;
-        }
-   ?>
-  <title><?php echo $product[$productIndex]["name"]; ?> | Basket Addict</title>
 
-</head>
+      // if (! isset($productIndex) OR $productIndex >= count($products) OR $productIndex < 0 OR empty($productIndex)) {
+      //     //If $productIndex has not here or empty or more than products or less
+      //     //That's go to 404 pages
+      //     header('Location: 404.html');
+      //     exit;
+      // }
+?>
+
+<title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
 
 <body class="product">
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
-  <!-- Add your site or application content here -->
-
-
-     <?php include('header.php'); ?>
-
-
+  <!-- Add header -->
+  <?php include('header.php'); ?>
 
   <main class="container" >
-    <section class=" row">
 
-      <?php echo '<img class="img-thumbnail shadow-sm col-lg-6" src="' . $product[$productIndex]['src'] . '" alt="' . $product[0]['name'] . '">'; ?>
+    <section class=" row">
+      <!-- Add img of product -->
+      <?php echo '<img class="img-thumbnail shadow-sm col-lg-6" src="' . $products[$productIndex]['src'] . '" alt="' . $products[0]['name'] . '">'; ?>
 
       <div class="col-lg-6">
-        <h2><?php echo $product[$productIndex]['name']; ?></h2>
-        <div class="row">
-          <select class="col-6 size" name="">
+
+        <!-- Add name of product -->
+        <h2><?php echo $products[$productIndex]['name'];?></h2>
+
+        <div class="row divPrice">
+
+          <select class="col-6 size" name="size">
+
             <option value="">Taille</option>
-            <?php  foreach($product[$productIndex]['size'] as $element)
-  {
+            <!-- Add size shoes -->
+            <?php  foreach($products[$productIndex]['size'] as $element) {
 
                 echo '<option value="' . $element . '">' . $element . "</option>". '<br />'; // affichera $prenoms[0], $prenoms[1] etc.
 
@@ -82,13 +85,17 @@
             ?>
 
           </select>
-          <p class="col-6 price"><?php echo $product[0]['price']; ?></p>
+          <!-- Add Price -->
+          <p class="col-6 price"><?php echo $products[0]['price']; ?></p>
+
         </div>
 
         <div class="row">
+
           <p class="col-12 mt-2 mb-1 text-secondary font-weight-bold">Couleur</p>
-          <?php  foreach($product[$productIndex]['color'] as $element)
-          {
+
+          <!-- Add color -->
+          <?php  foreach($products[$productIndex]['color'] as $element) {
               echo '<div class="color col-1 ' . $element . '"></div>';
 
             }
@@ -96,21 +103,17 @@
 
         </div>
 
-        <p class="font-weight-bold available"><?php echo $product[$productIndex]['available']; ?></p>
+        <!-- Add if that's dispo -->
+        <p class="font-weight-bold available"><?php echo $products[$productIndex]['available']; ?></p>
+
         <p class="text-secondary font-weight-bold">Description</p>
-        <p class="text-secondary"><?php echo $product[$productIndex]['descript']; ?></p>
+        <!-- Add descript -->
+        <p class="text-secondary"><?php echo $products[$productIndex]['descript']; ?></p>
+
       </div>
 
     </section>
 
   </main>
 
-
-     <?php include('footer.php'); ?>
-
-
-
-
-</body>
-
-</html>
+   <?php include('footer.php'); ?>
