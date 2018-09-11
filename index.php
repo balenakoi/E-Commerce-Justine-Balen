@@ -84,7 +84,7 @@ include("header.php");
 
           <div class="col-md-3">
             <a href="product.php?index=<?php echo $key; ?>" >
-              <img margin-top="100" width="300" src="<?php echo $value['src']?>">
+              <img margin-top="100" width="100%" src="<?php echo $value['src']?>">
               <div class="card-body">
                   <h4 class="card-title"><?php echo $value['name'];?></h4>
                   <p class="card-text"><?php echo $value['disc'];?></p>
