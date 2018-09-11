@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title><?php echo $product[$productIndex]["name"]; ?> | Basket Addict</title>
+<title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

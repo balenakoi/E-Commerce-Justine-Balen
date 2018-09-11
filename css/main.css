@@ -291,6 +291,131 @@ a:hover{
   color:#fb3640;
 }
 
+
+
+/* ===========================================================
+    Product styles
+    ========================================================== */
+
+   .product section {
+     text-align: center;
+   }
+
+   .product h2 {
+     color: #5687e6;
+     margin: 18px 0;
+   }
+
+   .product .price {
+     text-align: right;
+     font-size: 25px;
+     margin: 0;
+   }
+
+   .product .row {
+     margin: 0 20px;
+     display: flex;
+     justify-content: space-between;
+
+   }
+
+   .product .color {
+     width: 20px;
+     height: 20px;
+     border: 1px solid black;
+
+   }
+
+   .product .available {
+     color: #00a676;
+     margin: 20px 0;
+     border-bottom: 1px solid;
+     border-top: 1px solid;
+     font-size: 1.2rem;
+   }
+
+   .product select {
+     color: #6c757d;
+   }
+
+   .product .row > p {
+     margin: 25px 0;
+     text-align: initial;
+     padding: 0;
+   }
+
+   .product section p:last-child {
+     text-align: justify;
+     margin: 15px;
+   }
+
+/*============================================
+      Colors shoes
+      ==============================================*/
+
+   .black  {
+     background-color: black;
+
+   }
+
+   .red {
+     background-color: red;
+   }
+
+   .white {
+     background-color: white;
+   }
+
+   .blue {
+     background-color: #253b9e;
+   }
+
+   .orange {
+     background-color: #ff5a13;
+   }
+
+   .lightblue {
+     background-color: #69a4a8;
+   }
+
+   .lightgreen {
+     background-color: #31a399;
+   }
+
+   .lightpink {
+     background-color: #e6a4a5;
+   }
+
+/*=======================================
+    Responsive
+    ===========================================*/
+
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+ .product .row {
+  align-items: center;
+ }
+
+ .product .divPrice {
+   justify-content: center;
+   flex-direction: column-reverse;
+ }
+
+ .product .price {
+   text-align: center !important;
+ }
+
+ .footer {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+ }
+ .product section p:last-child {
+   margin: 0;
+ }
+}
+
 .footer {
   margin-top: 65px;
   background: #073660;
@@ -303,24 +428,19 @@ a:hover{
   border-right: 1px solid #70726F;
   transition: all .5s ease;
 }
+
 .footer a:first-child {
   border-left: 1px solid #70726F;
 }
+
 .footer a:hover {
   color: white;
 }
 
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
 
-
-
-
-
-
-
-
-
-
-
+ }
 
 
 
