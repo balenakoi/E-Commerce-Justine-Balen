@@ -54,11 +54,12 @@
 ?>
 
 <title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
+<!-- Add header -->
+<?php include('header.php'); ?>
 
 <body class="product">
 
-  <!-- Add header -->
-  <?php include('header.php'); ?>
+
 
   <main class="container" >
 
