@@ -57,7 +57,6 @@
 <!-- Add header -->
 <?php include('header.php'); ?>
 
-<body class="product">
 
 
 
