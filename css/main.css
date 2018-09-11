@@ -101,6 +101,10 @@ textarea {
      background-color: white;
    }
 
+/* ===========================================================
+    Product styles
+    ========================================================== */
+    
    .product section {
      text-align: center;
    }
@@ -158,6 +162,7 @@ textarea {
 
    .product section p:last-child {
      text-align: justify;
+     margin: 15px;
    }
 
 
