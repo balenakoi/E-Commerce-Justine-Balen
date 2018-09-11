@@ -5,8 +5,6 @@
   <?php
   $productIndex = $_GET['index'];
 
-
-
         $product = [
           ['name' => 'Nike Air Span II SE Mini Swoosh - Black/Red',
           'price' => '109,00 €',
@@ -23,7 +21,7 @@
             'descript' => "Les équipes de la marque américaine ont revu le design de l’emblématique New Balance 1500 en lui apportant un côté plus technique avec cette semelle empruntée à la NB990v3. Ce changement confère un look tout de suite plus moderne à la silhouette. Son assemblage a été réalisé dans l’usine anglaise de la marque à Flimby avec ce mélange de cuir suédé et de mesh. Aux niveaux des couleurs, la paire affiche un mix de différents bleus, de rose, de blanc et de gris. Cette New Balance M1500.9 FT, Made in UK, appartient à la collection Automne/Hiver 2018.",
             'src' => "img/new-balance-made-in-uk.jpg",
             'size' => [40, 41.5, 42.5, 43, 44, 44.5, 45],
-            'color' => ['white', 'lightblue', 'lightpink']
+            'color' => ['white', 'lightblue', 'lightpink', 'black']
             ],
             [
             'name' => 'Asics Gel Saga - White/Asics Blue',
@@ -44,28 +42,12 @@
             'color' => ['white', 'lightgreen']
           ]
         ];
-        if (! isset($productIndex) OR $productIndex >= count($product)) {
+        if (! isset($productIndex) OR $productIndex >= count($product) OR $productIndex < 0) {
           header('Location: 404.html');
           exit;
         }
-
-
-
-
-
    ?>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><?php echo $product[$productIndex]["name"]; ?> | Basket Addict</title>
-  <meta name="description" content="<?php echo $product[$productIndex]['descript']; ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -75,54 +57,58 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <header>
+
 
     <!-- <?php include('header.php'); ?> -->
 
-  </header>
 
-  <main >
-    <section class="container">
-      <?php echo '<img class="img-thumbnail shadow-sm" src="' . $product[$productIndex]['src'] . '" alt="' . $product[0]['name'] . '">'; ?>
-      <h2><?php echo $product[$productIndex]['name']; ?></h2>
-      <div class="row">
-        <select class="col-6 size" name="">
-          <option value="">Taille</option>
-          <?php  foreach($product[$productIndex]['size'] as $element)
-{
 
-              echo '<option value="' . $element . '">' . $element . "</option>". '<br />'; // affichera $prenoms[0], $prenoms[1] etc.
+  <main class="container" >
+    <section class=" row">
+
+      <?php echo '<img class="img-thumbnail shadow-sm col-lg-6" src="' . $product[$productIndex]['src'] . '" alt="' . $product[0]['name'] . '">'; ?>
+
+      <div class="col-lg-6">
+        <h2><?php echo $product[$productIndex]['name']; ?></h2>
+        <div class="row">
+          <select class="col-6 size" name="">
+            <option value="">Taille</option>
+            <?php  foreach($product[$productIndex]['size'] as $element)
+  {
+
+                echo '<option value="' . $element . '">' . $element . "</option>". '<br />'; // affichera $prenoms[0], $prenoms[1] etc.
+
+              }
+            ?>
+
+          </select>
+          <p class="col-6 price"><?php echo $product[0]['price']; ?></p>
+        </div>
+
+        <div class="row">
+          <p class="col-12 mt-2 mb-1 text-secondary font-weight-bold">Couleur</p>
+          <?php  foreach($product[$productIndex]['color'] as $element)
+  {
+              echo '<div class="color col-1 ' . $element . '"></div>';
 
             }
           ?>
 
-        </select>
-        <p class="col-6"><?php echo $product[0]['price']; ?></p>
+        </div>
+
+        <p class="font-weight-bold available"><?php echo $product[$productIndex]['available']; ?></p>
+        <p class="text-secondary font-weight-bold">Description</p>
+        <p class="text-secondary"><?php echo $product[$productIndex]['descript']; ?></p>
       </div>
 
-      <div class="row">
-        <p class="col-12 mt-2 mb-1 text-secondary font-weight-bold">Couleur</p>
-        <?php  foreach($product[$productIndex]['color'] as $element)
-{
-            echo '<div class="color col-1 ' . $element . '"></div>';
-
-          }
-        ?>
-
-      </div>
-
-      <p class="font-weight-bold available"><?php echo $product[$productIndex]['available']; ?></p>
-      <p class="text-secondary font-weight-bold">Description</p>
-      <p class="text-secondary"><?php echo $product[$productIndex]['descript']; ?></p>
     </section>
 
   </main>
 
-  <footer>
 
     <!-- <?php include('footer.php'); ?> -->
 
-  </footer>
+
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
