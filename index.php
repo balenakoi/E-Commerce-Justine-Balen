@@ -70,30 +70,32 @@
 <?php
 include("header.php");
 ?>
-<p style="text-align:center; font-size:25px; color:#5687e6;">Selection du mois</p>
+<!-- TITRE  -->
+<p class="paragraphe">Selection du mois</p>
 <div class="container">
   <div class="row">
-<?php
-foreach ($products as $key => $value) {?>
-
-      <div class="col-md-3">
-        <a href="produit.php?index=<?php echo $key; ?>" >
-          <img margin-top="100" width="300" src="<?php echo $value['src']?>">
-          <div class="card-body">
-              <h4 class="card-title"><?php echo $value['name'];?></h4>
-              <p class="card-text"><?php echo $value['disc'];?></p>
-              <p class="price"><?php echo $value['price'];?></p>
-          </div>
-        </a>
-      </div>
-
     <?php
-}
- ?>
-</div>
+    // The foreach loop for looping the products
+    foreach ($products as $key => $value) {?>
+
+          <div class="col-md-3">
+            <a href="produit.php?index=<?php echo $key; ?>" >
+              <img margin-top="100" width="300" src="<?php echo $value['src']?>">
+              <div class="card-body">
+                  <h4 class="card-title"><?php echo $value['name'];?></h4>
+                  <p class="card-text"><?php echo $value['disc'];?></p>
+                  <p class="price"><?php echo $value['price'];?></p>
+              </div>
+            </a>
+          </div>
+
+        <?php
+    }
+     ?>
+ </div>
 </div>
 <?php
-include('footer.php');
+  include('footer.php');
   ?>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
