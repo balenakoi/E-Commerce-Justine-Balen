@@ -55,7 +55,6 @@
 
 <title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
 
-<body class="product">
 
   <!-- Add header -->
   <?php include('header.php'); ?>
