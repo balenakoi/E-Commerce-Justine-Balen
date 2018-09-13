@@ -109,6 +109,11 @@ textarea {
      margin: 0;
      padding: 0;
    }
+
+   .index {
+     align-content: space-between;
+     height: 100vh;
+   }
    html {
      font-size: 62.5%;
    }
@@ -143,7 +148,7 @@ textarea {
    /*   background-color: #023E73; */
      width: 100%;
      padding: 2rem;
-
+     margin: 0;
    }
    .nav-item {
      color: white;
@@ -420,20 +425,19 @@ a:hover{
    flex: 0 0 5%;
  }
 
- .product {
+ body {
    display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-between;
-    height: 100%;
+    height: 100vh;
 
 
  }
 }
 
 .footer {
-  margin-top: 65px;
   background: #073660;
   padding: 10px 0;
   width: 100%;
