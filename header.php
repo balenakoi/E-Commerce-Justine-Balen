@@ -20,23 +20,25 @@
 
 
 <body class="product">
-  <div class="nav-container">
-    <div class="navbar">
-      <div class="mobileMenu"></div>
-      <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
-      <a href="index.php" class="nav-item">Accueil</a>
-      <div class="toggleMenu">
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
+  <header>
+    <div class="nav-container">
+      <div class="navbar">
+        <div class="mobileMenu"></div>
+        <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
+        <a href="index.php" class="nav-item">Accueil</a>
+        <div class="toggleMenu">
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+        </div>
       </div>
+
     </div>
 
+    <!-- Mobile Nav Section(hidden content) -->
+  <div class="overlay">
+      <nav class="nav">
+          <a href="index.php">Accueil</a>
+      </nav>
   </div>
-
-  <!-- Mobile Nav Section(hidden content) -->
-<div class="overlay">
-    <nav class="nav">
-        <a href="index.php">Accueil</a>
-    </nav>
-</div>
+  </header>
