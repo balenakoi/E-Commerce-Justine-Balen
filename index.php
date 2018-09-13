@@ -44,15 +44,10 @@
          ]
        ];
 
-     // if (! isset($productIndex) OR $productIndex >= count($products) OR $productIndex < 0 OR empty($productIndex)) {
-     //     //If $productIndex has not here or empty or more than products or less
-     //     //That's go to 404 pages
-     //     header('Location: 404.html');
-     //     exit;
-     // }
 
 include("header.php");
 ?>
+
 <!-- TITRE  -->
 <p class="paragraphe">Selection du mois</p>
 <div class="container">

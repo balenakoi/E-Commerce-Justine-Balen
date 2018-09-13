@@ -45,34 +45,38 @@
           ]
         ];
 
-      // if (! isset($productIndex) OR $productIndex >= count($products) OR $productIndex < 0 OR empty($productIndex)) {
-      //     //If $productIndex has not here or empty or more than products or less
-      //     //That's go to 404 pages
-      //     header('Location: 404.html');
-      //     exit;
-      // }
+      if (! isset($productIndex) OR $productIndex >= count($products) OR $productIndex < 0 OR (empty($productIndex) AND $productIndex != "0")) {
+
+          //If $productIndex has not here or empty or more than products or less
+          //That's go to 404 pages
+          header('Location: 404.html');
+          exit;
+      }
+
+
 ?>
 
 <title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
+<!-- Add header -->
+<?php include('header.php'); ?>
 
 
-  <!-- Add header -->
-  <?php include('header.php'); ?>
+
 
   <main class="container" >
 
     <section class=" row">
       <!-- Add img of product -->
-      <?php echo '<img class="img-thumbnail shadow-sm col-lg-6" src="' . $products[$productIndex]['src'] . '" alt="' . $products[0]['name'] . '">'; ?>
+      <?php echo '<img class="img-thumbnail shadow-sm col-lg-5" src="' . $products[$productIndex]['src'] . '" alt="' . $products[0]['name'] . '">'; ?>
 
-      <div class="col-lg-6">
+      <div class="col-lg-7">
 
         <!-- Add name of product -->
         <h2><?php echo $products[$productIndex]['name'];?></h2>
 
         <div class="row divPrice">
 
-          <select class="col-6 size" name="size">
+          <select class="col-6 col-lg-2 size" name="size">
 
             <option value="">Taille</option>
             <!-- Add size shoes -->
@@ -85,11 +89,11 @@
 
           </select>
           <!-- Add Price -->
-          <p class="col-6 price"><?php echo $products[0]['price']; ?></p>
+          <p class="col-6 col-lg-2 price"><?php echo $products[0]['price']; ?></p>
 
         </div>
 
-        <div class="row">
+        <div class="row divColor">
 
           <p class="col-12 mt-2 mb-1 text-secondary font-weight-bold">Couleur</p>
 

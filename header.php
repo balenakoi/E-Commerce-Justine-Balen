@@ -18,7 +18,6 @@
 
 </head>
 
-<body>
 
 <body class="product">
   <div class="nav-container">
