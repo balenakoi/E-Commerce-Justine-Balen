@@ -23,7 +23,7 @@ $(window).ready(function() {
   $(window).scroll(function() {
      var scroll = $(window).scrollTop();
 
-     if (scroll >= 100) {
+     if (scroll >= 100 && window.innerWidth < 993) {
 
       header.style.position = "fixed";
       containerNav.style.height = "80px";

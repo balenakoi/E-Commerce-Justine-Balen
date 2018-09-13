@@ -56,7 +56,7 @@ include("header.php");
     // The foreach loop for looping the products
     foreach ($products as $key => $value) {?>
 
-          <div class="col-md-3">
+          <div class="col-md-6 col-lg-3">
             <a href="product.php?index=<?php echo $key; ?>" >
               <img margin-top="100" width="100%" src="<?php echo $value['src']?>">
               <div class="card-body">

@@ -89,7 +89,7 @@
 
           </select>
           <!-- Add Price -->
-          <p class="col-6 col-lg-2 price"><?php echo $products[0]['price']; ?></p>
+          <p class="col-6 col-lg-3 price"><?php echo $products[0]['price']; ?></p>
 
         </div>
 
