@@ -56,14 +56,13 @@
 
 ?>
 
-<title><?php echo $products[$productIndex]["name"]; ?> | Basket Addict</title>
 <!-- Add header -->
 <?php include('header.php'); ?>
 
 
 
 
-  <main class="container" >
+  <main class="container product" >
 
     <section class=" row">
       <!-- Add img of product -->
@@ -89,7 +88,7 @@
 
           </select>
           <!-- Add Price -->
-          <p class="col-6 col-lg-2 price"><?php echo $products[0]['price']; ?></p>
+          <p class="col-6 col-lg-3 price"><?php echo $products[0]['price']; ?></p>
 
         </div>
 
