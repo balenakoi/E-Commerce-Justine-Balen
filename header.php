@@ -1,10 +1,20 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
 
 <head>
 
+  <?php $url = $_SERVER['PHP_SELF'];
+        $pageName = substr($url, -9, -1); ?>
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    <?php if ($pageName == "index.ph") {
+    echo "Accueil";
+  } else {
+    echo $products[$productIndex]['name'];
+  } ?>
+  | Basket Addict</title>
   <meta name="description" content="">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -19,7 +29,7 @@
 </head>
 
 
-<body class="product">
+<body>
   <header>
     <div class="nav-container">
       <div class="navbar">
