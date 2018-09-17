@@ -11,6 +11,8 @@
   <title>
     <?php if ($pageName == "index.ph") {
     echo "Accueil";
+  } elseif ($pageName == "ntact.ph") {
+    echo "Contact";
   } else {
     echo $products[$productIndex]['name'];
   } ?>
@@ -36,11 +38,19 @@
         <div class="mobileMenu"></div>
         <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
         <a href="index.php" class="nav-item">Accueil</a>
+        <a href="contact.php" class="nav-item">Contact</a>
         <div class="toggleMenu">
           <span>&nbsp;</span>
           <span>&nbsp;</span>
           <span>&nbsp;</span>
         </div>
+        <a href="#" class="basketlink">
+          <img src="img/basket.svg" alt="Panier" class="basket">
+          <div class="baskContent">
+            <p>0</p>
+          </div>
+        </a>
+
       </div>
 
     </div>
@@ -49,6 +59,8 @@
   <div class="overlay">
       <nav class="nav">
           <a href="index.php">Accueil</a>
+          <a href="contact.php">Contact</a>
+
       </nav>
   </div>
   </header>
