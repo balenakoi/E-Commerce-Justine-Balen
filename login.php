@@ -17,26 +17,24 @@
   <link rel="stylesheet" href="css/normalize.css">
 
 </head>
+<body>
+  <?php
+  include("header.php");
+  ?>
+			<!-- //MOT DE PASS -->
+			<div class="container">
+				<form action="login_post.php" method="post" class="admin">
+					<label for="name"  class="name">Name</label><br>
+					<input type="name" name="name"> <br>
+				  <label for="password"  class="password">Password</label> <br>
+					<input type="password" name="password"> <br>
+				  <input type="submit" value="valider">
+				</form>
+			</div>
 
-<body class="product">
-  <div class="nav-container">
-    <div class="navbar">
-      <div class="mobileMenu"></div>
-      <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
-      <a href="index.php" class="nav-item">Accueil</a>
-      <a href="login.php" class="login" color=blue;>Login</a>
-      <div class="toggleMenu">
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-      </div>
-    </div>
+      <?php
+      include("footer.php");
+      ?>
 
-  </div>
-
-  <!-- Mobile Nav Section(hidden content) -->
-<div class="overlay">
-    <nav class="nav">
-        <a href="index.php">Accueil</a>
-    </nav>
-</div>
+</body>
+</html>
