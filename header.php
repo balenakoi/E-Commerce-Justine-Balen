@@ -28,6 +28,19 @@
 
 </head>
 
+<<<<<<< HEAD
+<body class="product">
+  <div class="nav-container">
+    <div class="navbar">
+      <div class="mobileMenu"></div>
+      <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
+      <a href="index.php" class="nav-item">Accueil</a>
+      <a href="login.php" class="login" color=blue;>Login</a>
+      <div class="toggleMenu">
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+=======
 
 <body>
   <header>
@@ -41,6 +54,7 @@
           <span>&nbsp;</span>
           <span>&nbsp;</span>
         </div>
+>>>>>>> c589a734c8a8545a6efd5faf6d0b28cdae4d6da2
       </div>
 
     </div>
