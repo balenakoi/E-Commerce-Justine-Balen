@@ -159,8 +159,40 @@ body {
   justify-content: space-around;
   align-content: space-between;
   height: 100vh;
+}
 
+   .login {
+     color: blue;
+     text-decoration: none;
+     font-size: 2rem;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 900;
+     padding: 1rem;
+   }
 
+   .login:hover {
+     color: #00a676;
+   }
+
+   .container{
+     display: flex;
+     justify-content: center;
+   }
+  .admin{
+    background: red;
+   }
+  .name, .password{
+    font-size: 25px;
+  }
+
+   .left-item {
+     flex-direction: row;
+     justify-content: flex-start;
+     flex-grow:  1;
+     font-size: 2rem;
+     font-family: 'Pacifico', cursive;
+     text-decoration: none;
+     color: coral;
 }
 
 html {

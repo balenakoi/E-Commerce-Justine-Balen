@@ -47,6 +47,7 @@
 </head>
 
 
+
 <body>
   <header>
     <div class="nav-container">
@@ -55,6 +56,7 @@
         <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
         <a href="index.php" class="nav-item">Accueil</a>
         <a href="contact.php" class="nav-item">Contact</a>
+        <a href="login.php" class="login" color=blue;>Login</a>
         <div class="toggleMenu">
           <span>&nbsp;</span>
           <span>&nbsp;</span>
@@ -79,7 +81,8 @@
       <nav class="nav">
           <a href="index.php">Accueil</a>
           <a href="contact.php">Contact</a>
+          <a href="login.php" class="login" color=blue;>Login</a>
 
       </nav>
-  </div>
+    </div>
   </header>
