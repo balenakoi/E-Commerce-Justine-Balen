@@ -4,9 +4,10 @@ include("header.php");
 ?>
       <?php
       // Connection to the database
+      include("../../password/password.php");
       try
       {
-          $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', '');
+          $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', $password);
       }
       catch(Exception $e)
       {
@@ -20,8 +21,9 @@ include("header.php");
         <div class="row">
           <?php
           // The foreach loop for looping the products
-          foreach ($req as $key => $value) {?>
-      <?php $reqimg = $bdd->prepare("SELECT * FROM source_img WHERE product_id = :idt");
+          foreach ($req as $key => $value) { ?>
+      <?php
+            $reqimg = $bdd->prepare("SELECT * FROM source_img WHERE product_id = :idt");
             $reqimg->execute(array(
              'idt' => $value['id']
            ));

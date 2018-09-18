@@ -3,18 +3,36 @@
 
 <head>
 
-  <?php $url = $_SERVER['PHP_SELF'];
-        $pageName = substr($url, -9, -1); ?>
+  <?php
+  //take the source page
+  $url = $_SERVER['PHP_SELF'];
+        $pageName = substr($url, -9, -1);
+
+        include("../password1/password.php");
+        try
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', $password);
+        }
+    catch(Exception $e)
+    {
+            die('Erreur : '.$e->getMessage());
+    }
+  ?>
+
 
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>
-    <?php if ($pageName == "index.ph") {
-    echo "Accueil";
-  } else {
-    echo $products[$productIndex]['name'];
-  } ?>
-  | Basket Addict</title>
+    <?php
+    //display if that index contact or product
+    if ($pageName == "index.ph") {
+      echo "Accueil";
+    } elseif ($pageName == "ntact.ph") {
+      echo "Contact";
+    } else {
+      echo $products[$productIndex]['name'];
+    }
+    ?> | Basket Addict</title>
   <meta name="description" content="">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -28,19 +46,6 @@
 
 </head>
 
-<<<<<<< HEAD
-<body class="product">
-  <div class="nav-container">
-    <div class="navbar">
-      <div class="mobileMenu"></div>
-      <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
-      <a href="index.php" class="nav-item">Accueil</a>
-      <a href="login.php" class="login" color=blue;>Login</a>
-      <div class="toggleMenu">
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-=======
 
 <body>
   <header>
@@ -49,12 +54,23 @@
         <div class="mobileMenu"></div>
         <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
         <a href="index.php" class="nav-item">Accueil</a>
+        <a href="contact.php" class="nav-item">Contact</a>
+        <a href="login.php" class="login" color=blue;>Login</a>
         <div class="toggleMenu">
           <span>&nbsp;</span>
           <span>&nbsp;</span>
           <span>&nbsp;</span>
         </div>
->>>>>>> c589a734c8a8545a6efd5faf6d0b28cdae4d6da2
+        <a href="#" class="basketlink">
+          <img src="img/basket.svg" alt="Panier" class="basket">
+          <div class="baskContent">
+            <p class="numBasket"><?php
+            $respond = $bdd->query('SELECT count(*) as id from basket');
+            $length = $respond->fetch();
+            echo $length['id']; ?></p>
+          </div>
+        </a>
+
       </div>
 
     </div>
@@ -63,6 +79,9 @@
   <div class="overlay">
       <nav class="nav">
           <a href="index.php">Accueil</a>
+          <a href="contact.php">Contact</a>
+          <a href="login.php" class="login" color=blue;>Login</a>
+
       </nav>
-  </div>
+    </div>
   </header>

@@ -95,79 +95,73 @@ textarea {
 
 /* ==========================================================================
    Author's custom styles
-   ========================================================================== */
-   *,
-   *::after,
-   *::before {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
+   ========================================================================== */*
+
+ @keyframes fadeIn {
+   0% {
+     opacity: 0;
    }
-   body {
-     background-color: #f4f4f4;
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
+   50% {
+     opacity: .5;
+   }
+   100% {
+     opacity: 1;
    }
 
-   .index {
-     align-content: space-between;
-     height: 100vh;
-   }
-   html {
-     font-size: 62.5%;
-   }
+ }
 
-  header {
+/* =========================================================================
+   Repete action
+   =========================================================================  */
+
+ body, .paragraphe, .navbar, .product .price, .product .row,  *, *::after, *::before {
+   margin: 0;
+ }
+
+ body, .product .row > p, *, *::after, *::before   {
+   padding: 0;
+ }
+
+ body, *, *::after, *::before {
+   box-sizing: border-box;
+ }
+
+  .navbar, .toggleMenu, .product .row  {
+    display: flex;
+  }
+
+  header, .navbar, .nav-container, .overlay, .toggleMenu span, .paragraphe, .footer  {
     width: 100%;
   }
 
-   .paragraphe{
-     text-align: center;
-     font-size: 25px;
-     color: #5687e6;
-     width: 100%;
-     margin: 0;
-   }
+  .nav-container, .navbar, .nav {
+    position: relative;
+  }
 
-   .wrapper {
-     max-width: 100%;
-     height: auto;
-   }
+.navbar, .left-item {
+  flex-direction: row;
 
-   .nav-container {
-     background-color: #023E73;
-     position: relative;
-     width: 100%;
-     height: auto;
-   }
+}
+
+.nav, .toggleMenu {
+  flex-direction: column;
+}
+  /* =========================================================================
+                Header
+     =========================================================================  */
 
 
-   .navbar {
-     position: relative;
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-end;
-     align-content: center;
-   /*   background-color: #023E73; */
-     width: 100%;
-     padding: 2rem;
-     margin: 0;
-   }
-   .nav-item {
-     color: white;
-     text-decoration: none;
-     font-size: 2rem;
-     font-family: 'Raleway', sans-serif;
-     font-weight: 900;
-     padding: 1rem;
-   }
+body {
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  height: 100vh;
+}
 
-   .nav-item:hover {
-     color: #00a676;
-   }
-
-   .login{
+   .login {
      color: blue;
      text-decoration: none;
      font-size: 2rem;
@@ -179,7 +173,7 @@ textarea {
    .login:hover {
      color: #00a676;
    }
-  
+
    .container{
      display: flex;
      justify-content: center;
@@ -199,109 +193,153 @@ textarea {
      font-family: 'Pacifico', cursive;
      text-decoration: none;
      color: coral;
+}
 
-   }
+html {
+ font-size: 62.5%;
+}
 
+.basket {
+  width: 45px;
+  margin: 0 10px;
+}
+.show a {
+  display: block;
+}
 
-   /*  Class to toggle for the menu content */
+.wrapper {
+ max-width: 100%;
+}
 
-   .toggleMenu {
-     order: 5;
-     display: flex;
-     flex-direction: column;
-     flex-basis: 3rem;
-   }
-   .toggleMenu span {
-     color:#00a676;
-     border-top: .2rem solid white;
-     border-radius: .1rem;
-     z-index: 99;
-     width: 100%;
-   }
-   .toggleMenu:hover span {
-     cursor: pointer;
-     border-top: .2rem solid #00a676;
-   }
-
-   .toggleMenu {
-     display: flex;
-     flex-direction: column;
-     align-content: center;
-     justify-content: space-around;
-     align-items: center;
-   }
+.wrapper, .nav-container {
+ height: auto;
+}
+.nav-container {
+ background-color: #023E73;
+}
 
 
+.navbar {
+ justify-content: flex-end;
+ align-content: center;
+ padding: 1.4rem;
+ align-items: center;
+}
 
-   /* ------- Media Queries Mobile ------- */
+.nav-item {
+ color: white;
+ text-decoration: none;
+ font-size: 2rem;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 900;
+ padding: 1rem;
+}
 
-   @media screen and (min-width: 31rem) {
-     .toggleMenu, .mobileMenu {
-       display: none;
-     }
-   }
+.nav-item:hover {
+ color: #00a676;
+}
+
+.left-item {
+ justify-content: flex-start;
+ flex-grow:  1;
+ font-size: 2rem;
+ font-family: 'Pacifico', cursive;
+ text-decoration: none;
+ color: coral;
+ width: 50%;
+
+}
+
+.nav {
+  margin-top: 10vw;
+  display: none;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  z-index: 60;
+}
+
+.nav a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  color: #00a676;
+  padding: 1rem;
+  z-index: 60;
+}
+
+.show {
+ display: flex;
+}
+
+.overlay {
+ display: none;
+ top: 0;
+ position: absolute;
+ height: 100vh;
+ background-color: rgb(2,62,115,.8);
+ z-index: 20;
+}
+.overlayAni {
+ animation: fadeIn 2s ease-in-ease-out;
+}
+.showOverlay {
+ display: block;
+
+}
+
+.basketlink {
+  position: relative;
+}
+
+.baskContent {
+  position: absolute;
+  right: 13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: rgb(255,255,255);
+  text-align: center;
+  top: 0px;
+}
+
+/*  Class to toggle for the menu content */
+
+.toggleMenu {
+ order: 5;
+ flex-basis: 3rem;
+ align-content: center;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.toggleMenu span {
+ color:#00a676;
+ border-bottom: .2rem solid white;
+ border-radius: .1rem;
+ z-index: 99;
+ height: 15px;
+}
+
+.toggleMenu:hover span {
+ cursor: pointer;
+ border-bottom: .2rem solid #00a676;
+}
 
 
-   @media screen and (max-width: 30rem) {
-     .nav-item {
-       display: none;
-     }
-   }
+/* =========================================================================
+              Index
+   =========================================================================  */
 
-   .nav {
-     position: relative;
-     margin-top: 10vw;
-     display: none;
-     flex-direction: column;
-     align-content: center;
-     justify-content: center;
-     align-items: center;
-     font-size: 2.5rem;
-     z-index: 60;
-   }
-   .nav a {
-     text-decoration: none;
-     font-family: 'Raleway', sans-serif;
-     font-weight: 900;
-     color: #00a676;
-     padding: 1rem;
-     z-index: 60;
-   }
-   .show {
-     display: flex;
-   }
-   .overlay {
-     display: none;
-     top: 0;
-     position: absolute;
-     width: 100%;
-     height: 100vh;
-     background-color: rgb(2,62,115,.8);
-     z-index: 20;
-   }
-   .overlayAni {
-     animation: fadeIn 2s ease-in-ease-out;
-   }
-   .showOverlay {
-     display: block;
-
-   }
-   @keyframes fadeIn {
-     0% {
-       opacity: 0;
-     }
-     50% {
-       opacity: .5;
-     }
-     100% {
-       opacity: 1;
-     }
-
-   }
-
+.paragraphe {
+ text-align: center;
+ font-size: 25px;
+ color: #5687e6;
+}
 
 .row img{
-  margin-top:29px;
+  margin-top: 29px;
 }
 
 .card-title{
@@ -324,111 +362,176 @@ a:hover{
   color:#fb3640;
 }
 
-
-
 /* ===========================================================
     Product styles
     ========================================================== */
 
-   .product section {
-     text-align: center;
-   }
+.product section {
+ text-align: center;
+}
 
-   .product h2 {
-     color: #5687e6;
-     margin: 18px 0;
-   }
+.product h2, .contact h1 {
+ color: #5687e6;
+ margin: 18px 0;
+}
 
-   .product .price {
-     text-align: right;
-     font-size: 25px;
-     margin: 0;
-   }
+.product .price {
+ text-align: right;
+ font-size: 25px;
+}
 
-   .product .row {
-     margin: 0;
-     display: flex;
-     justify-content: space-between;
-     align-items: flex-start;
+.product .row {
+ justify-content: space-between;
+ align-items: flex-start;
 
-   }
+}
 
-   .product .divColor {
-     margin: 0 20px;
-     justify-content: space-around;
-   }
+.product .divColor {
+ margin: 0 20px;
+ justify-content: space-around;
+}
 
-   .product .color {
-     width: 20px;
-     height: 20px;
-     border: 1px solid black;
+.product .color {
+ width: 20px;
+ height: 20px;
+ border: 1px solid black;
 
-   }
+}
 
-   .product .available {
-     color: #00a676;
-     margin: 20px 0;
-     border-bottom: 1px solid;
-     border-top: 1px solid;
-     font-size: 1.2rem;
-   }
+.product .available {
+ color: #00a676;
+ margin: 20px 0;
+ border-bottom: 1px solid;
+ border-top: 1px solid;
+ font-size: 1.2rem;
+}
 
-   .product select {
-     color: #6c757d;
-   }
+.product select {
+ color: #6c757d;
+}
 
-   .product .row > p {
-     margin: 25px 0;
-     text-align: initial;
-     padding: 0;
-   }
+.product .row > p {
+ margin: 25px 0;
+ text-align: initial;
+}
 
-   .product section p:last-child {
-     text-align: justify;
-     margin: 15px;
-   }
+.product section p:last-child {
+ text-align: justify;
+ margin: 15px;
+}
+
+.product .btn {
+  margin: 10px;
+}
 
 /*============================================
       Colors shoes
       ==============================================*/
 
-   .black  {
-     background-color: black;
+.black  {
+ background-color: black;
 
-   }
+}
 
-   .red {
-     background-color: red;
-   }
+.red {
+ background-color: red;
+}
 
-   .white {
-     background-color: white;
-   }
+.white {
+ background-color: white;
+}
 
-   .blue {
-     background-color: #253b9e;
-   }
+.blue {
+ background-color: #253b9e;
+}
 
-   .orange {
-     background-color: #ff5a13;
-   }
+.orange {
+ background-color: #ff5a13;
+}
 
-   .lightblue {
-     background-color: #69a4a8;
-   }
+.lightblue {
+ background-color: #69a4a8;
+}
 
-   .lightgreen {
-     background-color: #31a399;
-   }
+.lightgreen {
+ background-color: #31a399;
+}
 
-   .lightpink {
-     background-color: #e6a4a5;
-   }
+.lightpink {
+ background-color: #e6a4a5;
+}
+/* =========================================================================
+              Contact
+   =========================================================================  */
+
+.contact .btn {
+  margin: 20px auto;
+  background: #5687e6;
+  padding: 10px 39px;
+  display: block;
+}
+
+.contact .btn:hover {
+  background-color: white;
+}
+
+.contact {
+  height: auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.contact textarea {
+  height: 150px;
+  padding: 10px;
+}
+
+.contact textarea:hover, .contact input[type="email"]:hover {
+  box-shadow: 0px 0px 5px darkgray;
+}
+/* =========================================================================
+              Index
+   =========================================================================  */
+
+.footer {
+  background: #073660;
+  padding: 10px 0;
+}
+
+.footer a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #70726F;
+  transition: all .5s ease;
+}
+
+.footer a:first-child {
+  border-left: 1px solid #70726F;
+}
+
+.footer a:hover {
+  color: white;
+}
+
 
 /*=======================================
     Responsive
     ===========================================*/
 
+@media screen and (min-width: 31rem) {
+  .toggleMenu, .mobileMenu {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 30rem) {
+  .nav-item {
+    display: none;
+  }
+}
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
@@ -453,43 +556,8 @@ a:hover{
    flex: 0 0 5%;
  }
 
- body {
-   display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-between;
-    height: 100vh;
 
-
- }
 }
-
-.footer {
-  background: #073660;
-  padding: 10px 0;
-  width: 100%;
-}
-.footer a {
-  color: #70726F;
-  font-size: 20px;
-  padding: 10px;
-  border-right: 1px solid #70726F;
-  transition: all .5s ease;
-}
-
-.footer a:first-child {
-  border-left: 1px solid #70726F;
-}
-
-.footer a:hover {
-  color: white;
-}
-
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-
- }
 
 
 
