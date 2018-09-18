@@ -4,19 +4,31 @@
 <head>
 
   <?php $url = $_SERVER['PHP_SELF'];
-        $pageName = substr($url, -9, -1); ?>
+        $pageName = substr($url, -9, -1);
+
+    include("../../mdp/mdp.php");
+
+    try
+    {
+      $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', $mdp);    }
+    catch(Exception $e)
+    {
+            die('Erreur : '.$e->getMessage());
+    }
+  ?>
+
 
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>
     <?php if ($pageName == "index.ph") {
-    echo "Accueil";
-  } elseif ($pageName == "ntact.ph") {
-    echo "Contact";
-  } else {
-    echo $products[$productIndex]['name'];
-  } ?>
-  | Basket Addict</title>
+      echo "Accueil";
+    } elseif ($pageName == "ntact.ph") {
+      echo "Contact";
+    } else {
+      echo $products[$productIndex]['name'];
+    }
+    ?> | Basket Addict</title>
   <meta name="description" content="">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -47,7 +59,10 @@
         <a href="#" class="basketlink">
           <img src="img/basket.svg" alt="Panier" class="basket">
           <div class="baskContent">
-            <p>0</p>
+            <p><?php
+            $respond = $bdd->query('SELECT count(*) as id from basket');
+            $length = $respond->fetch();
+            echo $length['id']; ?></p>
           </div>
         </a>
 

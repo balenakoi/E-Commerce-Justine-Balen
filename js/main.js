@@ -4,8 +4,9 @@ var overlay = document.querySelector('.overlay');
 var header = document.getElementsByTagName('header')[0];
 var containerNav = document.querySelector('.nav-container');
 var navBar = document.querySelector('.navbar');
-
-
+var numBasket = document.querySelector('.numBasket');
+var buttonBasket = document.querySelector('.buttonBasket');
+var numClick = 0;
 
 $(window).ready(function() {
 
@@ -39,4 +40,8 @@ $(window).ready(function() {
     }
   });
 
+  $(buttonBasket).click(function() {
+    numClick++;
+    numBasket.innerHTML = numClick;
+  })
 })
