@@ -12,10 +12,10 @@ catch(Exception $e)
 }
     // We recover the last 4 tickets
     $req = $bdd->query("SELECT * FROM product WHERE id= '".$_GET['index']."'");
-
 ?>
       <div class="container">
         <div class="row">
+
           <?php
           // The foreach loop for looping the products
           foreach ($req as $key => $value) {
@@ -29,6 +29,7 @@ catch(Exception $e)
 
         <main class="container product" >
 
+
           <section class=" row">
             <!-- Add img of product -->
             <?php echo '<img class="img-thumbnail shadow-sm col-lg-5" src="'  . '" alt="' . $products['name'] . '">'; ?>
@@ -40,13 +41,27 @@ catch(Exception $e)
 
               <div class="row divPrice">
 
+
+  <main class="container product" >
+
+    <section class=" row">
+      <!-- Add img of product -->
+      <?php echo '<img class="img-thumbnail shadow-sm col-lg-5" src="' . $products[$productIndex]['src'] . '" alt="' . $products[0]['name'] . '">'; ?>
+
+      <div class="col-lg-7">
+
+
                 <select class="col-6 col-lg-2 size" name="size">
 
                   <option value="">Taille</option>
                   <!-- Add size shoes -->
                   <?php  foreach($products[$productIndex]['size'] as $element) {
 
+
                       echo '<option value="' . $element . '">' . $element . "</option>". '<br />'; // affichera $prenoms[0], $prenoms[1] etc.
+
+          <select class="col-6 col-lg-2 size" name="size">
+
 
                     }
                   ?>
@@ -57,13 +72,22 @@ catch(Exception $e)
 
               </div>
 
+
               <div class="row divColor">
+
+          </select>
+          <!-- Add Price -->
+          <p class="col-6 col-lg-3 price"><?php echo $products[0]['price']; ?></p>
+
 
                 <p class="col-12 mt-2 mb-1 text-secondary font-weight-bold">Couleur</p>
 
                 <!-- Add color -->
                 <?php  foreach($products[$productIndex]['color'] as $element) {
                     echo '<div class="color col-1 ' . $element . '"></div>';
+
+        <div class="row divColor">
+
 
                   }
                 ?>
@@ -90,3 +114,4 @@ catch(Exception $e)
       $req->closeCursor();
 
       include('footer.php');
+?>
