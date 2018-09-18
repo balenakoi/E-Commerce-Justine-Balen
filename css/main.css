@@ -150,8 +150,17 @@ textarea {
                 Header
      =========================================================================  */
 
+
 body {
   background-color: #FFF;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  height: 100vh;
+
+
 }
 
 html {
@@ -329,7 +338,7 @@ a:hover{
  text-align: center;
 }
 
-.product h2 {
+.product h2, .contact h1 {
  color: #5687e6;
  margin: 18px 0;
 }
@@ -415,8 +424,36 @@ a:hover{
 .lightpink {
  background-color: #e6a4a5;
 }
+/* =========================================================================
+              Contact
+   =========================================================================  */
 
+.contact .btn {
+  margin: 20px auto;
+  background: #5687e6;
+  padding: 10px 39px;
+  display: block;
+}
 
+.contact .btn:hover {
+  background-color: white;
+}
+
+.contact {
+  height: auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.contact textarea {
+  height: 150px;
+  padding: 10px;
+}
+
+.contact textarea:hover, .contact input[type="email"]:hover {
+  box-shadow: 0px 0px 5px darkgray;
+}
 /* =========================================================================
               Index
    =========================================================================  */
@@ -483,16 +520,7 @@ a:hover{
    flex: 0 0 5%;
  }
 
- body {
-   display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-between;
-    height: 100vh;
 
-
- }
 }
 
 

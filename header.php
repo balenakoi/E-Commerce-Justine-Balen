@@ -3,7 +3,9 @@
 
 <head>
 
-  <?php $url = $_SERVER['PHP_SELF'];
+  <?php
+  //take the source page
+  $url = $_SERVER['PHP_SELF'];
         $pageName = substr($url, -9, -1);
 
     include("../../mdp/mdp.php");
@@ -21,7 +23,9 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>
-    <?php if ($pageName == "index.ph") {
+    <?php
+    //display if that index contact or product
+    if ($pageName == "index.ph") {
       echo "Accueil";
     } elseif ($pageName == "ntact.ph") {
       echo "Contact";
@@ -59,7 +63,7 @@
         <a href="#" class="basketlink">
           <img src="img/basket.svg" alt="Panier" class="basket">
           <div class="baskContent">
-            <p><?php
+            <p class="numBasket"><?php
             $respond = $bdd->query('SELECT count(*) as id from basket');
             $length = $respond->fetch();
             echo $length['id']; ?></p>

@@ -112,7 +112,7 @@
         <!-- Add descript -->
         <p class="text-secondary"><?php echo $products[$productIndex]['descript']; ?></p>
 
-        <button type="submit" class="buttonBasket" name="button">Ajouter au panier</button>
+        <button type="submit" class="buttonBasket btn" name="button">Ajouter au panier</button>
       </div>
 
 

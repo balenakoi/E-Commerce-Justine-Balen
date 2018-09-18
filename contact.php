@@ -1,18 +1,18 @@
 
 <?php include('header.php');?>
 
- <main>
+ <main class="contact">
 
    <section>
      <h1>Donnez nous votre avis !</h1>
-     <form class="" action="result.php" method="post">
+     <form action="result.php" class="form-group" method="post">
        <label for="email">E-mail</label>
-       <input type="email" name="email" value="" required>
+       <input type="email" name="email" class="form-control" value="" required>
 
        <label for="content">Message</label>
-       <textarea name="content" required></textarea>
+       <textarea name="content" class="form-control" required></textarea>
 
-       <input type="submit" name="envoyer" value="Envoyer">
+       <input type="submit" class="btn" name="envoyer" value="Envoyer">
      </form>
    </section>
 
