@@ -57,15 +57,22 @@ catch(Exception $e)
 
                   <option value="">Taille</option>
                   <!-- Add size shoes -->
-                  <?php  foreach($products[$productIndex]['size'] as $element) {
+
 
 
                       echo '<option value="' . $element . '">' . $element . "</option>". '<br />'; // affichera $prenoms[0], $prenoms[1] etc.
                       ?>
                        <select class="col-6 col-lg-2 size" name="size">
 
+<<<<<<< HEAD
                          <?php
                     }
+=======
+                      <select class="col-6 col-lg-2 size" name="size">
+
+
+
+>>>>>>> f02db0541876e8ae51b21f4c4fb0ca35779e9721
                   ?>
 
                 </select>
@@ -90,7 +97,12 @@ catch(Exception $e)
                     ?>
                  <div class="row divColor">
 
+<<<<<<< HEAD
                    <?php
+=======
+
+
+>>>>>>> f02db0541876e8ae51b21f4c4fb0ca35779e9721
                   }
                 ?>
 
@@ -107,7 +119,8 @@ catch(Exception $e)
             </div>
 
 
-          </section>
+
+
 
         </main>
 
