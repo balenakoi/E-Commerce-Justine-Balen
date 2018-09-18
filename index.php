@@ -4,9 +4,10 @@ include("header.php");
 ?>
       <?php
       // Connection to the database
+      include("../../password/password.php");
       try
       {
-          $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', '');
+          $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', $password);
       }
       catch(Exception $e)
       {

@@ -28,7 +28,6 @@
 
 </head>
 
-<<<<<<< HEAD
 <body class="product">
   <div class="nav-container">
     <div class="navbar">
@@ -40,24 +39,6 @@
         <span>&nbsp;</span>
         <span>&nbsp;</span>
         <span>&nbsp;</span>
-=======
-
-<body>
-  <header>
-    <div class="nav-container">
-      <div class="navbar">
-        <div class="mobileMenu"></div>
-        <a href="index.php" class="left-item"><img src="img/2.png" alt="logo"></a>
-        <a href="index.php" class="nav-item">Accueil</a>
-        <div class="toggleMenu">
-          <span>&nbsp;</span>
-          <span>&nbsp;</span>
-          <span>&nbsp;</span>
-        </div>
->>>>>>> c589a734c8a8545a6efd5faf6d0b28cdae4d6da2
-      </div>
-
-    </div>
 
     <!-- Mobile Nav Section(hidden content) -->
   <div class="overlay">
