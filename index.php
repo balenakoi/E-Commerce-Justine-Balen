@@ -1,17 +1,19 @@
 <?php
+// Connection to the database
+include("../../mdp/mdp.php");
+
+try
+{
+  $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', $mdp);    }
+catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
 
 include("header.php");
 ?>
       <?php
-      // Connection to the database
-      try
-      {
-          $bdd = new PDO('mysql:host=localhost;dbname=basket_addict;charset=utf8', 'root', '');
-      }
-      catch(Exception $e)
-      {
-              die('Erreur : '.$e->getMessage());
-      }
+    
       // We recover the last 4 tickets
       $req = $bdd->query("SELECT * FROM product ORDER BY id DESC LIMIT 4");
 
